@@ -1,3 +1,0 @@
-[submodule "src/content/Recipes"]
-	path = src/content/Recipes
-	url = git@github.com:processwire-recipes/Recipes.git
