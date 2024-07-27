@@ -1,0 +1,25 @@
+---
+// layouts, components, ...
+import Base from "@layouts/Base.astro";
+
+// logic
+import { type CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const items = await getCollection("recipes");
+
+  return items.map((item) => ({
+    params: { slug: item.slug },
+    props: item,
+  }));
+}
+
+type Props = CollectionEntry<"recipes">;
+
+const item = Astro.props;
+const { Content } = await item.render();
+---
+
+<Base {...item.data}>
+  <Content />
+</Base>

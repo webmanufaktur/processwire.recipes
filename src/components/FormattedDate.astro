@@ -1,0 +1,19 @@
+---
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+
+// Format the date as YYYY-MM-DD
+const formattedDate = date.toLocaleDateString("en-CA", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  timeZone: "Europe/Berlin",
+});
+---
+
+<time datetime={date.toISOString()} title={date.toISOString()}>
+  {formattedDate}
+</time>

@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+
+const items = await getCollection("recipes");
+
+// Extract all authors from all posts
+const allAuthors = items
+  .flatMap((post) => post.data.authors)
+  .sort((a, b) => a.localeCompare(b));
+
+// Create a Set to get unique authors, then convert back to array
+const authors = [...new Set(allAuthors)];
+---
+
+<section class="py-12 px-6 bg-pwblue text-white">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-xl md:text-2xl font-bold">
+      These wonderful people made this whole project possible. 👏👏👏
+    </h2>
+
+    <div>
+      <ul class="mt-8 flex flex-wrap gap-2 md:gap-4">
+        {
+          authors.map((author) => (
+            <li>
+              <div class="bg-slate-50 dark:bg-slate-700 dark:text-slate-100 text-slate-800 py-2 px-4 rounded text-xs tracking-widest font-semibold shadow-inner uppercase inline-block">
+                <span class="text-pwblue text-lg">👍</span>
+                <span class="">{author}</span>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
