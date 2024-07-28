@@ -1,0 +1,60 @@
+---
+interface Props {
+  label: string;
+  url: string;
+  icon?: boolean;
+  size?: "default" | "large";
+  style?: "full" | "outline";
+}
+
+const {
+  label,
+  url,
+  icon = false,
+  size = "default",
+  style = "full",
+} = Astro.props;
+
+let btnSize = "";
+if (size === "default" || size === "large") {
+  btnSize =
+    size === "default"
+      ? "text-sm tracking-widest uppercase rounded-md py-2 px-4 flex justify-center items-center"
+      : "tracking-widest uppercase rounded-md py-3 px-8 flex justify-center items-center";
+} else {
+  btnSize =
+    "text-sm tracking-widest uppercase rounded-md py-2 px-4 flex justify-center items-center";
+}
+
+let btnStyle = "";
+if (style === "full" || style === "outline") {
+  btnStyle =
+    style === "full"
+      ? "bg-pwblue text-white font-semibold"
+      : "border-2 border-pwblue text-pwblue font-black hover:bg-pwblue hover:text-white";
+} else {
+  btnStyle = "bg-pwblue font-semibold text-white";
+}
+---
+
+<a href={url} class={`${btnSize} ${btnStyle}`}>
+  {label}
+  {
+    icon && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2.5"
+        stroke="currentColor"
+        class="w-5 h-5 ml-1"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M8.25 4.5l7.5 7.5-7.5 7.5"
+        />
+      </svg>
+    )
+  }
+</a>

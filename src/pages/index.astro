@@ -1,5 +1,7 @@
 ---
+import Button from "@components/Button.astro";
 import FormattedDate from "@components/FormattedDate.astro";
+import Hero from "@components/Hero.astro";
 import Tag from "@components/Tag.astro";
 import Base from "@layouts/Base.astro";
 
@@ -13,26 +15,20 @@ const recipes = allRecipes.sort(
 const limitedRecipes = recipes.slice(0, 4);
 ---
 
-<Base>
+<Base title="ProcessWire Recipes">
   <article>
-    <div class="py-6 pb-12 md:py-24 px-6">
-      <div class="max-w-3xl mx-auto md:text-center">
-        <h1 class="text-2xl md:text-5xl font-bold">ProcessWire Recipes</h1>
-
-        <p class="mt-4 text-slate-700 text-base md:text-xl">
-          A collection of ProcessWire API snippets to solve common tasks,
-          provide full solutions, and some little helpers that make work with
-          the API easier.
-        </p>
-      </div>
-    </div>
+    <Hero
+      heading="h1"
+      headline="ProcessWire Recipes"
+      text="A collection of ProcessWire API snippets to solve common tasks, provide full solutions, and some little helpers that make work with the API easier."
+    />
 
     <section class="bg-pw-gradient">
       <ul class="space-y-8 md:space-y-12 max-w-2xl w-full mx-auto px-4">
         {
           limitedRecipes.map((recipe) => (
             <li>
-              <div class="border-2 border-gray-100 bg-white p-6 md:p-8 rounded">
+              <div class="border border-gray-100 bg-white p-6 md:p-8 rounded shadow">
                 <a href={`/recipes/${recipe.slug}/`} class="text-lg block">
                   <span class="font-bold">{recipe.data.title}</span>
                 </a>
@@ -67,12 +63,12 @@ const limitedRecipes = recipes.slice(0, 4);
     </section>
 
     <div class="table mx-auto mt-8">
-      <a
-        href=""
-        class="border-2 border-pwblue text-pwblue font-bold tracking-widest uppercase rounded-md py-3 px-8 flex justify-center items-center"
-      >
-        alle
-      </a>
+      <Button
+        label="See all ProcessWire Recipes"
+        url="/recipes/"
+        size="large"
+        style="outline"
+      />
     </div>
   </article>
 </Base>

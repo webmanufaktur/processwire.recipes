@@ -5,13 +5,26 @@ import Header from "@components/Header.astro";
 import TagCloud from "@components/TagCloud.astro";
 
 // Supports weights 100-900
-import "@fontsource-variable/montserrat";
+// import "@fontsource-variable/montserrat";
 // Supports weights 300-900
-import "@fontsource-variable/rubik";
+// import "@fontsource-variable/rubik";
 // Supports weights 100-800
-import "@fontsource-variable/jetbrains-mono";
+// import "@fontsource-variable/jetbrains-mono";
 
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  desc?: string;
+  robots?: string;
+}
+
+const {
+  title = "ProcessWire Recipes",
+  desc = "ProcessWire Recipes - collection of code snippets, demos, playground examples.",
+  robots = "index,follow",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL("/images/preview.png", Astro.url);
 ---
 
 <!doctype html>
@@ -20,16 +33,10 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <style is:global>
-      /* .pw-gradient {
-        background: linear-gradient(
-          to bottom,
-          white 4rem,
-          #2480e6 4rem calc(100% - 4rem),
-          white calc(100% - 4rem)
-        );
-      } */
-    </style>
+    <meta name="description" content={desc} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
   </head>
 
   <body>

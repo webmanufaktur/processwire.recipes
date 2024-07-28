@@ -1,0 +1,22 @@
+---
+interface Props {
+  heading?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  headline: string;
+  text?: string;
+}
+
+const { heading = "h1", headline, text } = Astro.props;
+
+const HeadingTag = heading;
+---
+
+<div class="py-6 pb-12 md:py-24 px-6">
+  <div class="max-w-3xl mx-auto md:text-center">
+    <HeadingTag
+      class="text-gray-900 text-2xl md:text-5xl font-bold"
+      set:html={headline}
+    />
+
+    {text && <p class="mt-4 text-slate-700 text-base md:text-xl">{text}</p>}
+  </div>
+</div>

@@ -8,31 +8,31 @@ import Tag from "@components/Tag.astro";
 export async function getStaticPaths() {
   const allRecipes = await getCollection("recipes");
 
-  // Get all unique tags
-  const uniqueTags = [
-    ...new Set(allRecipes.flatMap((recipe) => recipe.data.tags)),
+  // Get all unique authors
+  const uniqueAuthors = [
+    ...new Set(allRecipes.flatMap((recipe) => recipe.data.authors)),
   ];
 
-  // Create a path for each tag
-  return uniqueTags.map((tag) => {
+  // Create a path for each author
+  return uniqueAuthors.map((author) => {
     const filteredRecipes = allRecipes.filter((recipe) =>
-      recipe.data.tags.includes(tag)
+      recipe.data.authors.includes(author)
     );
     return {
-      params: { slug: tag.toLocaleLowerCase() },
-      props: { recipes: filteredRecipes, tag },
+      params: { slug: author.toLocaleLowerCase() },
+      props: { recipes: filteredRecipes, author },
     };
   });
 }
 
-const { recipes, tag } = Astro.props;
+const { recipes, author } = Astro.props;
 ---
 
-<Base title={`Recipes tagged with ${tag}`}>
+<Base title={`Recipes by ${author}`}>
   <Hero
     heading="h1"
-    headline={`Recipes tagged with <span class="text-pwpink">${tag}</span>`}
-    text="A collection of ProcessWire API snippets to solve common tasks, provide full solutions, and some little helpers that make work with the API easier."
+    headline={`Recipes by <span class="text-pwpink">${author}</span>`}
+    text="A collection of recipes created by this author."
   />
   <section class="bg-pw-gradient">
     <ul class="space-y-8 md:space-y-12 max-w-2xl w-full mx-auto px-4">
@@ -53,10 +53,7 @@ const { recipes, tag } = Astro.props;
                 <li>
                   Authors:
                   <span class="font-semibold">
-                    {(() => {
-                      const stringAuthors = recipe.data.authors.map(String);
-                      return stringAuthors.join(", ");
-                    })()}
+                    {recipe.data.authors.join(", ")}
                   </span>
                 </li>
               </ul>

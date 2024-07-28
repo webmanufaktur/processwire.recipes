@@ -5,6 +5,40 @@ excerpt: "All recent updates on this website summarized from new to old. In case
 toc: true
 ---
 
+## 🗓️ 2024-07-28
+
+- Newest build on Cloudflare with [Astro JS](https://astro.build/)
+- Typesafe definitions for recipes
+- Added author pages
+
+### Newest build on Cloudflare with Astro JS
+
+- [dev.processwire.recipes](https://dev.processwire.recipes/)
+- [v3.processwire.recipes](https://v3.processwire.recipes/)
+
+### Typesafe definitions for recipes
+
+We're excited to announce that recipes are now inherently type-safe thanks to Zod integration. The recipes collection is now defined using a strongly-typed schema, ensuring that all recipe entries conform to a consistent structure. This includes required fields like `title`, `authors`, `tags`, and `date`, as well as optional fields such as `version`, `image`, and `draft`. This enhancement improves data integrity and provides better developer experience with autocomplete and type checking support.
+
+```typescript
+const recipes = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    version: z.string().optional(),
+    authors: z.array(z.string()),
+    tags: z.array(z.string()),
+    date: z.date(),
+    image: z.string().optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+```
+
+### Added author pages
+
+Each recipe author now boasts a personalized showcase page, offering readers a curated collection of their culinary masterpieces and highlighting their unique contributions to our gastronomic community.
+
 ## 🗓️ 2024-05-13
 
 - Almost a year later 😭
