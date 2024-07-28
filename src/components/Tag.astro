@@ -1,13 +1,15 @@
 ---
+import { normalizeTag } from "@utils/utils";
 interface Props {
   tag: string;
 }
 
 const { tag } = Astro.props;
+const normalizedTag = normalizeTag(tag);
 ---
 
 <a
-  href={`/topic/${tag.toLocaleLowerCase()}/`}
+  href={`/topic/${normalizedTag}/`}
   class="bg-pwblue text-white h-8 px-2 rounded shadow-inner flex justify-center items-center hover:bg-pwpink"
 >
   <div class="text-xs tracking-widest font-semibold uppercase">

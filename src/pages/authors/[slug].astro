@@ -4,6 +4,7 @@ import Base from "@layouts/Base.astro";
 import Hero from "@components/Hero.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import Tag from "@components/Tag.astro";
+import { normalizeTag } from "@utils/utils";
 
 export async function getStaticPaths() {
   const allRecipes = await getCollection("recipes");
@@ -19,7 +20,7 @@ export async function getStaticPaths() {
       recipe.data.authors.includes(author)
     );
     return {
-      params: { slug: author.toLocaleLowerCase() },
+      params: { slug: normalizeTag(author) },
       props: { recipes: filteredRecipes, author },
     };
   });
@@ -28,10 +29,13 @@ export async function getStaticPaths() {
 const { recipes, author } = Astro.props;
 ---
 
-<Base title={`Recipes by ${author}`}>
+<Base
+  title={`${author} | processwire.recipes`}
+  desc={`ProcessWire API snippets by ${author}. Find these and more recipes on the processwire.recipes website.`}
+>
   <Hero
     heading="h1"
-    headline={`Recipes by <span class="text-pwpink">${author}</span>`}
+    headline={`Recipes by <div class="text-pwpink">${author}</div>`}
     text="A collection of recipes created by this author."
   />
   <section class="bg-pw-gradient">

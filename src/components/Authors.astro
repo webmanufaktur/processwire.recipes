@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 const items = await getCollection("recipes");
+import { normalizeTag } from "@utils/utils";
 
 // Extract all authors from all posts
 const allAuthors = items
@@ -23,7 +24,7 @@ const authors = [...new Set(allAuthors)];
           authors.map((author) => (
             <li>
               <a
-                href={`/authors/${author.toLocaleLowerCase()}/`}
+                href={`/authors/${normalizeTag(author)}/`}
                 class="bg-slate-50 dark:bg-slate-700 dark:text-slate-100 text-slate-800 h-8 px-2 rounded shadow-inner  flex justify-center items-center gap-2"
               >
                 <div class="text-lg">👍</div>
