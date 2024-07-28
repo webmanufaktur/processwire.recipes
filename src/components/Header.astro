@@ -1,5 +1,16 @@
 ---
 import Button from "./Button.astro";
+
+const navMain = [
+  {
+    label: "About",
+    url: "/about/",
+  },
+  {
+    label: "Recipes",
+    url: "/recipes/",
+  },
+];
 ---
 
 <header class="py-8 md:px-12 px-6">
@@ -16,15 +27,22 @@ import Button from "./Button.astro";
     </div>
     <nav class="hidden md:block">
       <ul class="flex justify-center items-center gap-8">
-        <li>
-          <a href="/" class="text-sm tracking-widest font-semibold uppercase"
-            >LINK</a
-          >
-        </li>
+        {
+          navMain.map(({ label, url }) => (
+            <li>
+              <a
+                href={url}
+                class="text-sm tracking-widest font-semibold uppercase"
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
         <li>
           <Button label="Submit recipe" url="/submit-recipe/" />
         </li>
-        <li>
+        <!-- <li>
           <a href="/search/" title="Open search">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +59,7 @@ import Button from "./Button.astro";
               ></path>
             </svg>
           </a>
-        </li>
+        </li> -->
       </ul>
     </nav>
 

@@ -14,5 +14,6 @@ Well known and established **ProcessWire Community Projects**:
 - [ProcessWire.recipes](https://processwire.recipes/)
 - [isit.pw](https://isit.pw/)
 - [pwtuts](https://www.pwtuts.com/)
+- [Awesome ProcessWire](https://github.com/jlahijani/awesome-processwire)
 
 The plan is to publish more **ProcessWire Community Projects** with lots more details here soon to give back to those who earn it!

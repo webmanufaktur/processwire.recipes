@@ -1,16 +1,16 @@
 ---
-title: Transparency Report
+seotitle: Transparency Report
 intro: "All about the money. What was spent. What was earned."
 excerpt: "I'm a big fan of <a href='#%23buildinpublic'>#buildinpublic</a>, and since this is a community project, I want to be totally transparent about what's going on here, including the money and monetization aspects. So, I'll be keeping this page updated with all the details on how much money was spent and earned, even when there was no money made at all."
-seotitle: "Transparency Report – Earnings and spendings of processwire.recipes"
-seodesc: "As a community project this should be part of #buildinpublic with transparency as a key principle. Earning with donations, sponsors, affiliate marketing, and other sources."
+title: "Transparency Report – Earnings and spendings of processwire.recipes"
+desc: "As a community project this should be part of #buildinpublic with transparency as a key principle. Earning with donations, sponsors, affiliate marketing, and other sources."
 seorobots: index, follow
 ---
 
 ## 💵 Spent
 
 | Spent on                        | Price (in US$) | Notes                               |
-| ------------------------------- | -------------: | ----------------------------------- |
+| :------------------------------ | -------------: | :---------------------------------- |
 | Domain<br>(1. year, 2023-03-10) |           6.30 | Domain Deal                         |
 | ~~Hosting~~                     |           0.00 | ~~Cloudflare Pages<br>(until May)~~ |
 | Hosting                         |           0.00 | Netlify<br>(since May)              |
@@ -22,7 +22,7 @@ seorobots: index, follow
 ### 2023
 
 | Month     | Amount (in US$) | Notes          |
-| --------- | --------------: | -------------- |
+| :-------- | --------------: | :------------- |
 | March     |            0.00 | _just started_ |
 | April     |            0.00 | _made it work_ |
 | **Total** |        **0.00** | 😭             |
