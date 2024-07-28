@@ -8,10 +8,19 @@ export default {
     extend: {
       fontFamily: {
         // sofia: ["Sofia Sans", ...defaultTheme.fontFamily.sans],
+        // sans: [
+        //   "Rubik Variable",
+        //   "Montserrat Variable",
+        //   ...defaultTheme.fontFamily.sans,
+        // ],
         sans: [
-          "Rubik Variable",
-          "Montserrat Variable",
-          ...defaultTheme.fontFamily.sans,
+          "Seravek",
+          "Gill Sans Nova",
+          "Ubuntu",
+          "Calibri",
+          "DejaVu Sans",
+          "source-sans-pro",
+          "sans-serif",
         ],
         mono: ["JetBrains Mono Variable", ...defaultTheme.fontFamily.mono],
       },
