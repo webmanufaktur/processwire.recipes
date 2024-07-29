@@ -32,11 +32,12 @@ const { recipes, author } = Astro.props;
 
 <Base
   title={`${author} | processwire.recipes`}
+  robots="noindex"
   desc={`ProcessWire API snippets by ${author}. Find these and more recipes on the processwire.recipes website.`}
 >
   <Hero
     heading="h1"
-    headline={`Recipes by <div class="text-pwpink mt-2 uppercase">${author}</div>`}
+    headline={`Recipes by <div class="text-pwblue mt-2 uppercase">${author}</div>`}
   />
   <section class="bg-pw-gradient">
     <ul class="space-y-8 md:space-y-12 max-w-2xl w-full mx-auto px-4">

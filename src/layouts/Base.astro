@@ -28,6 +28,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL("/processwire-recipes-ogimage.png", Astro.url);
 const faviconURL = new URL("/favicon.png", Astro.url);
 const sitemapURL = new URL("/sitemap-index.xml", Astro.url);
+
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === '/' || currentPath === '';
+const isRecipesPage = currentPath === '/recipes/' // || currentPath.startsWith('/recipes/');
+const showComponents = isHomePage || isRecipesPage;
 ---
 
 <!doctype html>
@@ -50,8 +55,10 @@ const sitemapURL = new URL("/sitemap-index.xml", Astro.url);
     <main>
       <slot />
     </main>
+    {showComponents &&
     <TagCloud />
     <Authors />
+    }
     <Footer />
   </body>
 </html>

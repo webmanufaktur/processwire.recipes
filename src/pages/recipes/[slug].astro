@@ -1,7 +1,10 @@
 ---
 // layouts, components, ...
+import FormattedDate from "@components/FormattedDate.astro";
 import Hero from "@components/Hero.astro";
+import Tag from "@components/Tag.astro";
 import Base from "@layouts/Base.astro";
+import { normalizeTag } from "@utils/utils";
 
 // logic
 import { type CollectionEntry, getCollection } from "astro:content";
@@ -25,12 +28,81 @@ const { Content } = await item.render();
   <article>
     <Hero headline={item.data.title} />
     <div class="bg-pw-gradient">
-      <div
-        class="bg-white max-w-3xl p-6 md:p-12 border md:shadow md:rounded mx-auto"
-        transition:name={item.slug}
-      >
-        <div class="prose max-w-none">
-          <Content />
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-3 gap-8">
+          <div class="col-span-2">
+            <div
+              class="bg-white max-w-3xl p-6 md:p-12 border md:shadow md:rounded mx-auto"
+              transition:name={item.slug}
+            >
+              <div class="prose max-w-none">
+                <Content />
+              </div>
+            </div>
+          </div>
+          <div class="mt-24 text-white">
+            <!-- SIDEBAR -->
+            <aside class="flex flex-col gap-4">
+              <!-- AUTHORS -->
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">
+                  Authors
+                </h4>
+                <ul class="flex flex-wrap gap-2 md:gap-4">
+                  {
+                    item.data.authors.map((author) => (
+                      <li>
+                        <a
+                          href={`/authors/${normalizeTag(author)}/`}
+                          class="bg-slate-50 dark:bg-slate-700 dark:text-slate-100 text-slate-800 h-8 px-2 rounded shadow-inner  flex justify-center items-center gap-2"
+                        >
+                          <div class="text-lg">👍</div>
+                          <div class="uppercase tracking-widest font-bold text-xs">
+                            {author}
+                          </div>
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+              <!-- TAGS -->
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">
+                  Tags
+                </h4>
+                <ul class="flex flex-wrap gap-2 md:gap-4">
+                  {
+                    item.data.tags.map((tag) => (
+                      <li>
+                        <Tag tag={tag} />
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+              <!-- VERSION -->
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">
+                  Version
+                </h4>
+                <div class="tabular-nums">{item.data.version}</div>
+              </div>
+              <!-- DATE -->
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">
+                  Date
+                </h4>
+                <FormattedDate date={item.data.date} />
+              </div>
+              <!-- PROCESSWIRE 
+              <div>
+                processwire: {item.data.processwire}
+              </div>-->
+              <!-- DEPENDENCIES 
+              <div>dependencies: {item.data.dependencies}</div>-->
+            </aside>
+          </div>
         </div>
       </div>
     </div>
