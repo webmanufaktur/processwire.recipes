@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
+import alpinejs from "@astrojs/alpinejs";
+
 // https://astro.build/config
 export default defineConfig({
   prefetch: {
@@ -11,6 +13,6 @@ export default defineConfig({
   build: {
     inlineStylesheets: "always",
   },
-  site: "https://dev.processwire.recipes",
-  integrations: [sitemap(), tailwind()],
+  site: "https://processwire.recipes",
+  integrations: [sitemap(), tailwind(), alpinejs()],
 });
