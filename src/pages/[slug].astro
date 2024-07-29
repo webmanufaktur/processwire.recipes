@@ -29,6 +29,13 @@ const { Content } = await item.render();
         class="bg-white max-w-3xl p-6 md:p-12 border md:shadow md:rounded mx-auto"
       >
         <div class="prose max-w-none">
+          {
+            item.data.excerpt && (
+              <div class="lead">
+                <p>{item.data.excerpt}</p>
+              </div>
+            )
+          }
           <Content />
         </div>
       </div>

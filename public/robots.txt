@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dev.processwire.recipes/sitemap-index.xml
+Sitemap: https://processwire.recipes/sitemap-index.xml

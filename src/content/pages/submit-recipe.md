@@ -49,7 +49,8 @@ dependencies:
 ## Clone the repo
 
 You can find the **official repository on Github**:
-https://github.com/processwire-recipes/Recipes/tree/master/src/recipes
+
+- https://github.com/processwire-recipes/Recipes
 
 Follow the instructions provided by Github and clone the **Recipe** Repository to commit changes and make pull requests.
 

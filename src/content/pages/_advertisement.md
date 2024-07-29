@@ -4,7 +4,7 @@ intro: "Will there be ads? Yes! Some. But..."
 excerpt: "The main reason I started this project was to revive a foundation of ProcessWire with a long history that has helped lots of developers tackle everyday tasks in ProcessWire. Making money with it wasn't and won't be my main focus. It's really just about bringing back this helpful tool for everyone to use."
 seotitle: ""
 seodesc: ""
-seorobots: noindex, follow
+seorobots: index, follow
 ---
 
 ## Will there be ads?

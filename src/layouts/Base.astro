@@ -3,6 +3,7 @@ import Authors from "@components/Authors.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import TagCloud from "@components/TagCloud.astro";
+import Tracking from "@components/Tracking.astro";
 import { ViewTransitions } from "astro:transitions";
 
 // Supports weights 100-900
@@ -14,21 +15,24 @@ import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
-  desc?: string;
-  robots?: string;
+  seotitle?: string;
+  seodesc?: string;
+  seorobots?: string;
 }
 
 const {
   title = "ProcessWire Recipes",
-  desc = "ProcessWire Recipes - collection of code snippets, demos, playground examples.",
-  robots = "index,follow",
+  seotitle,
+  seodesc = "ProcessWire Recipes - collection of code snippets, demos, playground examples.",
+  seorobots = "index,follow",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL("/processwire-recipes-ogimage.png", Astro.url);
 const faviconURL = new URL("/favicon.png", Astro.url);
 const sitemapURL = new URL("/sitemap-index.xml", Astro.url);
-
+const recipeRSS = new URL("/recipes.xml", Astro.url);
+// 
 const currentPath = Astro.url.pathname;
 const isHomePage = currentPath === '/' || currentPath === '';
 const isRecipesPage = currentPath === '/recipes/' // || currentPath.startsWith('/recipes/');
@@ -40,14 +44,29 @@ const showComponents = isHomePage || isRecipesPage;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={desc} />
-    <meta name="robots" content={robots} />
+    <title>{seotitle ? seotitle : title}</title>
+    <meta name="description" content={seodesc} />
+    <meta name="robots" content={seorobots} />
     <link rel="canonical" href={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
+    <!--  -->
     <link rel="icon" type="image/png" href={faviconURL} />
     <link rel="sitemap" href={sitemapURL} />
+    <link rel="alternate" type="application/rss+xml" title="processwire.recipes" href={recipeRSS}/>
+    <!-- OG -->
+    <meta property="og:title" content="{{ seotitle or title }}" />
+    {seodesc &&  <meta property="og:description" content="{{ seodesc }}" />}
+    <meta property="og:image" content={canonicalURL} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="{{ config.domain }}" />
+    <meta property="twitter:url" content="{{ config.url }}{{ page.url }}" />
+    <meta name="twitter:title" content="{{ seotitle or title }}" />
+    {seodesc && <meta name="twitter:description" content="{{ seodesc }}" />}
+    <meta name="twitter:image" content={canonicalURL} />
+    <!--  -->
     <ViewTransitions />
+    <Tracking />
   </head>
 
   <body>

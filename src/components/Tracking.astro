@@ -1,0 +1,17 @@
+---
+// Your Astro component logic
+const isProduction = import.meta.env.NODE_ENV === "production";
+---
+
+{
+  isProduction && (
+    <script
+      defer
+      src="https://api.pirsch.io/pa.js"
+      id="pianjs"
+      data-code="v3apQQZjqZ5VLiLdRFSuPLof3fImiriV"
+      data-astro-rerun
+      is:inline
+    />
+  )
+}

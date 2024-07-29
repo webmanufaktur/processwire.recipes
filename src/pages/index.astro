@@ -11,7 +11,7 @@ const recipes = allRecipes.sort(
   (a, b) => +new Date(b.data.date) - +new Date(a.data.date)
 );
 // limit recipes to 4
-const limitedRecipes = recipes.slice(0, 4);
+const limitedRecipes = recipes.slice(0, 5);
 ---
 
 <Base title="ProcessWire Recipes">

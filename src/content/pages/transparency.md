@@ -9,23 +9,32 @@ seorobots: index, follow
 
 ## 💵 Spent
 
-| Spent on                        | Price (in US$) | Notes                               |
-| :------------------------------ | -------------: | :---------------------------------- |
-| Domain<br>(1. year, 2023-03-10) |           6.30 | Domain Deal                         |
-| ~~Hosting~~                     |           0.00 | ~~Cloudflare Pages<br>(until May)~~ |
-| Hosting                         |           0.00 | Netlify<br>(since May)              |
-| Theme                           |           0.00 | InHouse                             |
-| **Total**                       |       **6.30** | Quite a cheap start                 |
+| Spent on      | Notes                  |   Price (in US$) |
+| :------------ | :--------------------- | ---------------: |
+| Domain (2023) | Domain Deal "1st Year" |             6.30 |
+| Domain (2024) | Renewal (sponsored)    |            48.99 |
+| Hosting       | Cloudflare Pages       |             0.00 |
+| Theme         | InHouse                |             0.00 |
+|               |                        | **Total: 55.29** |
 
 ## 💵 Earned
+
+### 2024
+
+We've got a few minor support and maintenance requests for some ProcessWire projects. It's not really a big deal, but on the bright side, the domain is already paid for 2024 and 2025.
+
+Plus, we've got a bit of pocket money left over to expand the site.
+
+😂😎🥳😂😎🥳
 
 ### 2023
 
 | Month     | Amount (in US$) | Notes          |
 | :-------- | --------------: | :------------- |
 | March     |            0.00 | _just started_ |
-| April     |            0.00 | _made it work_ |
-| **Total** |        **0.00** | 😭             |
+| April     |            0.00 |                |
+| [...]     |            0.00 |                |
+| **Total** |        **0.00** | 😭😭😭😭😭😭   |
 
 ## #buildinpublic
 

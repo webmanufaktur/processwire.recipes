@@ -7,15 +7,25 @@ toc: true
 
 ## 🗓️ 2024-07-28
 
-- Newest build on Cloudflare with [Astro JS](https://astro.build/)
-- Typesafe definitions for recipes
+- Migration to Astro JS (almost) completed
+- Migration to Cloudflare Pages completed
 - Added author pages
 - Removed search temporarily
+- Typesafe definitions for recipes
 
-### Newest build on Cloudflare with Astro JS
+### Migration to Astro JS and Cloudflare Pages
 
-- [dev.processwire.recipes](https://dev.processwire.recipes/)
-- [v3.processwire.recipes](https://v3.processwire.recipes/)
+This site has moved from 11ty to Astro JS for generating its static content. Currently, there's no need for partial dynamic <abbr title="Server-Side-Rendered">SSR</abbr> content or a database. However, to future-proof the site and allow for potential expansions, moving to Astro was the logical next step. An added bonus: it's incredibly fast!
+
+Another important step was moving (back) to Cloudflare Page as we have everything there, we need now and in the future.
+
+### Added author pages
+
+Each recipe author now boasts a personalized showcase page, offering readers a curated collection of their culinary masterpieces and highlighting their unique contributions to our gastronomic community.
+
+### Removed search temporarily
+
+A new search will be implented soon. For now all recipes are listed as they are on the [recipe page](/recipes/). In case you look for something specific, add _processwire recipe_ to your Google search query.
 
 ### Typesafe definitions for recipes
 
@@ -35,10 +45,6 @@ const recipes = defineCollection({
   }),
 });
 ```
-
-### Added author pages
-
-Each recipe author now boasts a personalized showcase page, offering readers a curated collection of their culinary masterpieces and highlighting their unique contributions to our gastronomic community.
 
 ## 🗓️ 2024-05-13
 

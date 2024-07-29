@@ -19,12 +19,12 @@ const pages = defineCollection({
   type: "content", // v2.5.0 and later
   schema: z.object({
     title: z.string(),
-    seotitle: z.string().optional(),
-    seodesc: z.string().optional(),
-    seorobots: z.string().optional(),
     intro: z.string().optional(),
     excerpt: z.string().optional(),
     toc: z.boolean().optional(),
+    seotitle: z.string().optional(),
+    seodesc: z.string().optional(),
+    seorobots: z.string().optional(),
   }),
 });
 
