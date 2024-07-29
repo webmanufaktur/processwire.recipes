@@ -4,9 +4,11 @@ const recipes = defineCollection({
   type: "content", // v2.5.0 and later
   schema: z.object({
     title: z.string(),
-    version: z.string().optional(),
+    processwire: z.string().optional(),
+    dependencies: z.array(z.string()).optional(),
     authors: z.array(z.string()),
     tags: z.array(z.string()),
+    version: z.string().optional(),
     date: z.date(),
     image: z.string().optional(),
     draft: z.boolean().optional(),
