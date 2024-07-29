@@ -1,5 +1,6 @@
 ---
 // layouts, components, ...
+import Hero from "@components/Hero.astro";
 import Base from "@layouts/Base.astro";
 
 // logic
@@ -21,12 +22,16 @@ const { Content } = await item.render();
 ---
 
 <Base {...item.data}>
-  <div class="bg-pw-gradient">
-    <article class="bg-white max-w-3xl p-12 border shadow rounded mx-auto">
-      <div class="prose">
-        <h1>{item.data.title}</h1>
-        <Content />
+  <article>
+    <Hero headline={item.data.title} />
+    <div class="bg-pw-gradient">
+      <div
+        class="bg-white max-w-3xl p-6 md:p-12 border md:shadow md:rounded mx-auto"
+      >
+        <div class="prose max-w-none">
+          <Content />
+        </div>
       </div>
-    </article>
-  </div>
+    </div>
+  </article>
 </Base>
