@@ -10,13 +10,13 @@ Since `processwire-recipes.com` went down and never came back 😔, I decided to
 
 ## Google Pagespeed Performance
 
-{% image "src/assets/images/pwrecipes-pagespeed.png", "processwire.recipes page speed results", "", [full] %}
+![Screenshot processwire.recipes page speed results](@assets/pwrecipes-pagespeed.png)
 
 I was pleased with how the results looked at first, but I soon realized that they were outdated. Nowadays, there are more considerations to keep in mind, such as accessibility and best practices.
 
 ## Website Carbon Footprint
 
-[{% image "src/assets/images/pwrecipes-carbon-footprint.png", "processwire.recipes carbon footprint", "", [full] %}](https://www.websitecarbon.com/website/processwire-recipes/)
+[![Screenshot website carbon footprint of processwire.recipes](@assets/pwrecipes-carbon-footprint.png)](https://www.websitecarbon.com/website/processwire-recipes/)
 
 I also checked the website's carbon footprint, and I was pleasantly surprised by the results. It performed better than 98% of all pages that were tested, which made me feel really good about using a static site generator on an EDGE hosting provider.
 
@@ -27,9 +27,13 @@ See more updates and changes in our [changelog](/changelog/).
 ### Site details
 
 - This site went online on **2023-02-25**
-- This site uses [11ty](https://11ty.dev/) to render `.md` files into `.html`
-- This site is hosted on [Netlify](https://www.netlify.com/)
-- ~~This site is hosted on **Cloudflare Pages**~~
+- This site uses [Astro](https://astro.build/) to render `.md` files into `.html`
+- This site is hosted on [Cloudflare Pages](https://pages.cloudflare.com/)
+
+#### Prior to version 3
+
+- [11ty](https://11ty.dev/) as SSG
+- [Netlify](https://www.netlify.com/) as hosting
 
 ### Issues? Problems? Questions?
 

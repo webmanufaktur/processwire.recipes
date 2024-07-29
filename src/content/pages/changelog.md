@@ -10,6 +10,7 @@ toc: true
 - Newest build on Cloudflare with [Astro JS](https://astro.build/)
 - Typesafe definitions for recipes
 - Added author pages
+- Removed search temporarily
 
 ### Newest build on Cloudflare with Astro JS
 

@@ -22,7 +22,7 @@ const tags = [...new Set(allTags)];
       {
         tags.map((tag) => (
           <li>
-            <Tag tag={tag} />
+            <Tag tag={tag} count={allTags.filter((t) => t === tag).length} />
           </li>
         ))
       }
