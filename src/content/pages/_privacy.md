@@ -201,7 +201,28 @@ This website uses so-called Google Fonts provided by Google to ensure the unifor
 
 For more information on Google Fonts, please follow this link: [https://developers.google.com/fonts/faq](https://developers.google.com/fonts/faq) and consult Google’s Data Privacy Declaration under: [https://policies.google.com/privacy?hl=en](https://policies.google.com/privacy?hl=en).
 
-## 7\. Online marketing and partner programs
+## 7\. Analytics
+
+**Pirsch Analytics**
+
+Emvi Software GmbH
+Nickelstraße 1b
+33378 Rheda-Wiedenbrück
+Germany
+E-mail: support@pirsch.io
+https://pirsch.io/privacy
+
+We use Pirsch Analytics for web analysis. Pirsch Analytics is a cookie-free web analytics software developed according to the principle of Privacy by Design. To analyze visitor flows, Pirsch Analytics generates a 16-digit number as a visitor ID using a hashing algorithm upon receiving the page view. The input values are the IP address, user agent, date, and a salt.
+
+The visitor's IP address is neither fully nor partially persisted and is completely and irreversibly anonymized through the hash. By incorporating the date and using a salt per website, it is ensured that website visitors cannot be recognized for longer than 24 hours and cannot be tracked across multiple websites. A rough localization (country/city) is performed using a locally integrated database.
+
+The use of Pirsch Analytics is based on Art. 6 para. 1 lit. f GDPR. The website operator has a legitimate interest in the anonymized analysis of user behavior to optimize its web offering. If appropriate consent has been requested, the processing is carried out exclusively on the basis of Art. 6 para. 1 lit. a GDPR and § 25 para. 1 TTDSG, insofar as the consent includes the storage of cookies or access to information in the user's end device (e.g., device fingerprinting) within the meaning of the TTDSG. The consent can be revoked at any time.
+
+**Order Processing**
+
+We have concluded a contract for order processing (DPA) for the use of the above-mentioned service. This is a contract required by data protection law, which ensures that this service processes the personal data of our website visitors only according to our instructions and in compliance with the GDPR.
+
+## 8\. Online marketing and partner programs
 
 ### Affiliate Programs on this website
 
