@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-// const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -8,11 +8,15 @@ export default {
     extend: {
       fontFamily: {
         // sofia: ["Sofia Sans", ...defaultTheme.fontFamily.sans],
-        // sans: [
-        //   "Montserrat Variable",
-        //   "Rubik Variable",
-        //   ...defaultTheme.fontFamily.sans,
-        // ],
+        sans: [
+          // "Cairo Variable",
+          // "Nunito Sans Variable",
+          "Outfit Variable",
+          // "Work Sans Variable",
+          // "Montserrat Variable",
+          // "Rubik Variable",
+          ...defaultTheme.fontFamily.sans,
+        ],
         // sans: [
         //   "Seravek",
         //   "Gill Sans Nova",
