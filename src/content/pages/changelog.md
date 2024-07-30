@@ -5,6 +5,10 @@ excerpt: "All recent updates on this website summarized from new to old. In case
 toc: true
 ---
 
+## 🗓️ 2024-07-30
+
+- Domain: processwire-recipes.com aquired
+
 ## 🗓️ 2024-07-28
 
 - Migration to Astro JS (almost) completed
