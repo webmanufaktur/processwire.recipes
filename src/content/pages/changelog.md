@@ -5,11 +5,15 @@ excerpt: "All recent updates on this website summarized from new to old. In case
 toc: true
 ---
 
-## 🗓️ 2024-07-30
+## 🔥 2024-07-31
+
+- Released [processwire.recipes](https://processwire.recipes/) in v3 with **Astro JS** on **Cloudflare Pages**.
+
+## 💯 2024-07-30
 
 - Domain: [processwire-recipes.com](https://processwire-recipes.com/) aquired
 
-## 🗓️ 2024-07-28
+## 🗓️ 2024-07-28 🔥 ⚒️ 🍕
 
 - Migration to Astro JS (almost) completed
 - Migration to Cloudflare Pages completed
@@ -35,19 +39,56 @@ A new search will be implented soon. For now all recipes are listed as they are 
 
 We're excited to announce that recipes are now inherently type-safe thanks to Zod integration. The recipes collection is now defined using a strongly-typed schema, ensuring that all recipe entries conform to a consistent structure. This includes required fields like `title`, `authors`, `tags`, and `date`, as well as optional fields such as `version`, `image`, and `draft`. This enhancement improves data integrity and provides better developer experience with autocomplete and type checking support.
 
+**The Definition**
+
 ```typescript
 const recipes = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    version: z.string().optional(),
     authors: z.array(z.string()),
     tags: z.array(z.string()),
     date: z.date(),
-    image: z.string().optional(),
-    draft: z.boolean().optional(),
+    version: z.string().optional(),
+    processwire: z.string().optional(),
+    dependencies: z.array(z.string()).optional(),
   }),
 });
+```
+
+**The Markdown**
+
+```markdown
+---
+title: "Recipe title"
+version: (if available)
+authors:
+  - "your forum name" || or other
+  - co-author
+tags:
+  - tags
+  - matching
+  - your
+  - recipe
+processwire: 3.0.210 (min) || 3.0.168 (tested)
+dependencies:
+  - AwesomeModule
+  - TextformatterAwesome
+  - PHP 8.0
+  - Service API Key
+---
+
+## Problem:
+
+...
+
+## Solution 1 (old approach):
+
+...
+
+### Additional resources
+
+...
 ```
 
 ## 🗓️ 2024-05-13
