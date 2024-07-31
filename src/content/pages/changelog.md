@@ -7,7 +7,7 @@ toc: true
 
 ## 🗓️ 2024-07-30
 
-- Domain: processwire-recipes.com aquired
+- Domain: [processwire-recipes.com](https://processwire-recipes.com/) aquired
 
 ## 🗓️ 2024-07-28
 
