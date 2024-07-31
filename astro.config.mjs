@@ -13,9 +13,9 @@ export default defineConfig({
     defaultStrategy: "hover",
     prefetchAll: true,
   },
-  build: {
-    inlineStylesheets: "always",
-  },
+  // build: {
+  //   inlineStylesheets: "always",
+  // },
   site: "https://processwire.recipes",
   integrations: [alpinejs(), sitemap(), tailwind(), mdx()],
   markdown: {
