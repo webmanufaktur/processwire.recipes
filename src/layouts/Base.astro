@@ -4,6 +4,7 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import TagCloud from "@components/TagCloud.astro";
 import Tracking from "@components/Tracking.astro";
+// import OffCanvas from "@components/OffCanvas.astro";
 import { ViewTransitions } from "astro:transitions";
 
 // Supports weights 100-900
@@ -39,7 +40,7 @@ const socialImageURL = new URL("/processwire-recipes-ogimage.png", Astro.url);
 const faviconURL = new URL("/favicon.png", Astro.url);
 const sitemapURL = new URL("/sitemap-index.xml", Astro.url);
 const recipeRSS = new URL("/recipes.xml", Astro.url);
-// 
+//
 const currentPath = Astro.url.pathname;
 const isHomePage = currentPath === '/' || currentPath === '';
 const isRecipesPage = currentPath === '/recipes/' // || currentPath.startsWith('/recipes/');
@@ -74,9 +75,12 @@ const showComponents = isHomePage || isRecipesPage;
     <!--  -->
     <ViewTransitions />
     <Tracking />
+    <style is:global>
+      [x-cloak] { display: none !important; }
+    </style>
   </head>
 
-  <body>
+  <body x-data="{ offCanvasOpen: false, scrolled: false }" x-on:scroll.window="scrolled = (window.pageYOffset > 200) ? true : false" :class="offCanvasOpen ? 'overflow-hidden' : ''">
     <Header />
     <main>
       <slot />
@@ -86,5 +90,6 @@ const showComponents = isHomePage || isRecipesPage;
     <Authors />
     }
     <Footer />
+    <!-- <OffCanvas /> -->
   </body>
 </html>
