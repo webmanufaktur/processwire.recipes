@@ -1,22 +1,20 @@
 import { z, defineCollection } from "astro:content";
 
 const recipes = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "content",
   schema: z.object({
     title: z.string(),
-    processwire: z.string().optional(),
-    dependencies: z.array(z.string()).optional(),
     authors: z.array(z.string()),
     tags: z.array(z.string()),
-    version: z.string().optional(),
     date: z.date(),
-    image: z.string().optional(),
-    draft: z.boolean().optional(),
+    version: z.string().optional(),
+    processwire: z.string().optional(),
+    dependencies: z.array(z.string()).optional(),
   }),
 });
 
 const pages = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "content",
   schema: z.object({
     title: z.string(),
     intro: z.string().optional(),
