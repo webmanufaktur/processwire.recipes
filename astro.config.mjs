@@ -1,11 +1,10 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-// import alpinejs from "@astrojs/alpinejs"; alpinejs(),
+import alpinejs from "@astrojs/alpinejs";
 import remarkBreaks from "remark-breaks";
 import rehypeExternalLinks from "rehype-external-links";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
-
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
@@ -18,7 +17,7 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
   site: "https://processwire.recipes",
-  integrations: [sitemap(), tailwind(), mdx()],
+  integrations: [alpinejs(), sitemap(), tailwind(), mdx()],
   markdown: {
     remarkPlugins: [remarkBreaks],
     rehypePlugins: [
