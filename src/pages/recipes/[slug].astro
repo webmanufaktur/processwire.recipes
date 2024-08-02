@@ -27,12 +27,12 @@ const { Content } = await item.render();
 <Base {...item.data}>
   <article>
     <Hero headline={item.data.title} />
-    <div class="bg-pw-gradient">
+    <div class="bg-pw-gradient px-4">
       <div class="max-w-5xl mx-auto">
         <div class="md:grid md:grid-cols-3 md:gap-8">
           <div class="col-span-2">
             <div
-              class="bg-white max-w-3xl p-6 md:p-12 border md:shadow md:rounded mx-auto"
+              class="bg-white max-w-3xl p-4 md:p-12 border md:shadow md:rounded mx-auto"
               transition:name={item.slug}
             >
               <div class="prose max-w-none">
@@ -95,11 +95,11 @@ const { Content } = await item.render();
                 </h4>
                 <FormattedDate date={item.data.date} />
               </div>
-              <!-- PROCESSWIRE 
+              <!-- PROCESSWIRE
               <div>
                 processwire: {item.data.processwire}
               </div>-->
-              <!-- DEPENDENCIES 
+              <!-- DEPENDENCIES
               <div>dependencies: {item.data.dependencies}</div>-->
             </aside>
           </div>
