@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { feedLoader } from "@ascorbic/feed-loader";
 
 const recipes = defineCollection({
   type: "content",
@@ -26,7 +27,20 @@ const pages = defineCollection({
   }),
 });
 
+const weeklypw = defineCollection({
+  loader: feedLoader({
+    url: "https://weekly.pw/rss/",
+  }),
+  schema: z.object({
+    title: z.string(),
+    link: z.string(),
+    description: z.string(),
+    date: z.date(),
+  }),
+});
+
 export const collections = {
   recipes: recipes,
   pages: pages,
+  weeklypw: weeklypw,
 };

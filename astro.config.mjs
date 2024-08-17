@@ -16,6 +16,9 @@ export default defineConfig({
   // build: {
   //   inlineStylesheets: "always",
   // },
+  experimental: {
+    contentLayer: true,
+  },
   site: "https://processwire.recipes",
   integrations: [alpinejs(), sitemap(), tailwind(), mdx()],
   markdown: {
