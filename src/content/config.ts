@@ -8,6 +8,8 @@ const recipes = defineCollection({
     authors: z.array(z.string()),
     tags: z.array(z.string()),
     date: z.date(),
+    created: z.date().optional(),
+    updated: z.date().optional(),
     version: z.string().optional(),
     processwire: z.string().optional(),
     dependencies: z.array(z.string()).optional(),
