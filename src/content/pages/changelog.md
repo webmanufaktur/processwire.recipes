@@ -5,6 +5,12 @@ excerpt: "All recent updates on this website summarized from new to old. In case
 toc: true
 ---
 
+## 🔥 2024-12-10
+
+- Updated to latest [Astro v5](https://astro.build/) -- which makes this version 3.1
+- yeah\_, unfortunately not that much time right now to get more done here. But please [submit your recipes](/submit-recipe/) or ideas for this project.
+- And as always: feel free to join the [ProcessWire Community](https://processwire.com/talk/).
+
 ## 🔥 2024-07-31
 
 - Released [processwire.recipes](https://processwire.recipes/) in v3 with **Astro JS** on **Cloudflare Pages**.

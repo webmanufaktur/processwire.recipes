@@ -17,7 +17,7 @@ export default defineConfig({
   //   inlineStylesheets: "always",
   // },
   experimental: {
-    contentLayer: true,
+    // contentLayer: true,
   },
   site: "https://processwire.recipes",
   integrations: [alpinejs(), sitemap(), tailwind(), mdx()],

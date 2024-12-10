@@ -4,13 +4,13 @@ import Hero from "@components/Hero.astro";
 import Base from "@layouts/Base.astro";
 
 // logic
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const items = await getCollection("pages");
 
   return items.map((item) => ({
-    params: { slug: item.slug },
+    params: { id: item.id },
     props: item,
   }));
 }
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"pages">;
 
 const item = Astro.props;
-const { Content } = await item.render();
+const { Content } = await render(item);
 ---
 
 <Base {...item.data}>

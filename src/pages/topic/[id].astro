@@ -19,7 +19,7 @@ export async function getStaticPaths() {
       recipe.data.tags.includes(tag)
     );
     return {
-      params: { slug: normalizeTag(tag) },
+      params: { id: normalizeTag(tag) },
       props: { recipes: filteredRecipes, tag },
     };
   });
@@ -41,7 +41,7 @@ const { recipes, tag } = Astro.props;
       {
         recipes.map((recipe) => (
           <li>
-            <RecipeCard slug={recipe.slug} {...recipe.data} />
+            <RecipeCard slug={recipe.id} {...recipe.data} />
           </li>
         ))
       }
