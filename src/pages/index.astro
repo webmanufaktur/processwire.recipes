@@ -27,7 +27,7 @@ const limitedRecipes = recipes.slice(0, 5);
         {
           limitedRecipes.map((recipe) => (
             <li>
-              <RecipeCard slug={recipe.slug} {...recipe.data} />
+              <RecipeCard slug={recipe.id} {...recipe.data} />
             </li>
           ))
         }

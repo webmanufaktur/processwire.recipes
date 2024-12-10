@@ -24,7 +24,7 @@ const recipes = allRecipes.sort(
         {
           recipes.map((recipe) => (
             <li>
-              <RecipeCard slug={recipe.slug} {...recipe.data} />
+              <RecipeCard slug={recipe.id} {...recipe.data} />
             </li>
           ))
         }

@@ -1,8 +1,9 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 import { feedLoader } from "@ascorbic/feed-loader";
 
 const recipes = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/recipes" }),
   schema: z.object({
     title: z.string(),
     authors: z.array(z.string()),
@@ -17,7 +18,7 @@ const recipes = defineCollection({
 });
 
 const pages = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/pages" }),
   schema: z.object({
     title: z.string(),
     intro: z.string().optional(),

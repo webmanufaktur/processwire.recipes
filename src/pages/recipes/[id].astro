@@ -7,13 +7,13 @@ import Base from "@layouts/Base.astro";
 import { normalizeTag } from "@utils/utils";
 
 // logic
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const items = await getCollection("recipes");
 
   return items.map((item) => ({
-    params: { slug: item.slug },
+    params: { id: item.id },
     props: item,
   }));
 }
@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"recipes">;
 
 const item = Astro.props;
-const { Content } = await item.render();
+const { Content } = await render(item);
 ---
 
 <Base {...item.data}>
@@ -33,7 +33,7 @@ const { Content } = await item.render();
           <div class="col-span-2">
             <div
               class="bg-white max-w-3xl p-4 md:p-12 border md:shadow md:rounded mx-auto"
-              transition:name={item.slug}
+              transition:name={item.id}
             >
               <div class="prose max-w-none">
                 <Content />

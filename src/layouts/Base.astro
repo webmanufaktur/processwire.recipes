@@ -5,7 +5,7 @@ import Header from "@components/Header.astro";
 import TagCloud from "@components/TagCloud.astro";
 import Tracking from "@components/Tracking.astro";
 // import OffCanvas from "@components/OffCanvas.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 // Supports weights 100-900
 // import "@fontsource-variable/montserrat";
@@ -73,7 +73,7 @@ const showComponents = isHomePage || isRecipesPage;
     {seodesc && <meta name="twitter:description" content={seodesc} />}
     <meta name="twitter:image" content={socialImageURL} />
     <!--  -->
-    <ViewTransitions />
+    <ClientRouter />
     <Tracking />
     <style is:global>
       [x-cloak] { display: none !important; }
