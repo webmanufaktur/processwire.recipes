@@ -5,7 +5,14 @@ excerpt: "All recent updates on this website summarized from new to old. In case
 toc: true
 ---
 
-## 🔥 2024-12-10
+## 🔥 2026-03-03
+
+- YES! This project is still alive and was just updated to use the latest and greatest [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/).
+- New content is also planned!
+
+---
+
+## 🗓️ 2024-12-10
 
 - Updated to latest [Astro v5](https://astro.build/) -- which makes this version 3.1
 - yeah\_, unfortunately not that much time right now to get more done here. But please [submit your recipes](/submit-recipe/) or ideas for this project.

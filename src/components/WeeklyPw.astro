@@ -26,8 +26,9 @@ const items = allItems.slice(0, 5);
                 {item.data.link}
               </div>
               <div class="line-clamp-2 text-gray-600 text-sm mt-2">
-                <FormattedDate date={item.data.date} />
-                &ndash; <Fragment set:html={item.data.description} />
+                {item.data.date && <FormattedDate date={item.data.date} />}
+                {item.data.date && item.data.description && " – "}
+                {item.data.description && <Fragment set:html={item.data.description} />}
               </div>
             </a>
           </li>

@@ -1,4 +1,5 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 import { feedLoader } from "@ascorbic/feed-loader";
 
@@ -36,9 +37,9 @@ const weeklypw = defineCollection({
   }),
   schema: z.object({
     title: z.string(),
-    link: z.string(),
-    description: z.string(),
-    date: z.date(),
+    link: z.string().optional(),
+    description: z.string().optional(),
+    date: z.coerce.date().optional(),
   }),
 });
 

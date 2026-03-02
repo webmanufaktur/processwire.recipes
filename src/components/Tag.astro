@@ -12,12 +12,10 @@ const normalizedTag = normalizeTag(tag);
 <a
   href={`/topic/${normalizedTag}/`}
   data-class="bg-pwblue text-white h-8 px-2 rounded shadow-inner flex justify-center items-center hover:bg-pwpink"
-  class="bg-gray-50 dark:bg-gray-700 dark:text-gray-100 text-gray-800 h-8 px-2 rounded shadow-inner flex justify-center items-center gap-2"
+  class="bg-pwblue text-white h-8 px-2 rounded shadow-inner flex justify-center items-center gap-2"
 >
   <div class="text-xs tracking-widest uppercase">
-    <span class="text-pwblue font-semibold">#</span><span class="font-semibold"
-      >{tag}</span
-    >
+    <span class="font-semibold">#</span><span class="font-semibold">{tag}</span>
     {count && <span>({count})</span>}
   </div>
 </a>

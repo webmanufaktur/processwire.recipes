@@ -1,11 +1,12 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
 import remarkBreaks from "remark-breaks";
 import rehypeExternalLinks from "rehype-external-links";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import mdx from "@astrojs/mdx";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,14 +14,14 @@ export default defineConfig({
     defaultStrategy: "hover",
     prefetchAll: true,
   },
+
   // build: {
   //   inlineStylesheets: "always",
   // },
-  experimental: {
-    // contentLayer: true,
-  },
   site: "https://processwire.recipes",
-  integrations: [alpinejs(), sitemap(), tailwind(), mdx()],
+
+  integrations: [alpinejs(), sitemap(), mdx()],
+
   markdown: {
     remarkPlugins: [remarkBreaks],
     rehypePlugins: [
@@ -35,5 +36,9 @@ export default defineConfig({
       // [rehypeExternalLinks, { rel: ['nofollow noopener noreferrer'], target: ['_blank'] }],
       rehypeAccessibleEmojis,
     ],
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
