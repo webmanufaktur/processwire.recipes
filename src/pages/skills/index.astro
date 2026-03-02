@@ -1,0 +1,36 @@
+---
+import Hero from "@components/Hero.astro";
+import SkillCard from "@components/SkillCard.astro";
+import Base from "@layouts/Base.astro";
+
+import { getCollection } from "astro:content";
+const allSkills = await getCollection("skills");
+// sort all skills by name alphabetically
+const skills = allSkills.sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<Base title="ProcessWire Skills" seorobots="noindex">
+  <article>
+    <Hero
+      heading="h1"
+      headline="ProcessWire Skills"
+      text="A collection of ProcessWire skills providing specialized knowledge, workflow patterns, and best practices for ProcessWire development."
+    />
+
+    <section class="bg-pw-gradient">
+      <ul class="space-y-8 md:space-y-12 max-w-2xl w-full mx-auto px-4">
+        {
+          skills.map((skill) => (
+            <li>
+              <SkillCard
+                slug={skill.id}
+                name={skill.data.name}
+                description={skill.data.description}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </article>
+</Base>

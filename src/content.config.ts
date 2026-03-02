@@ -31,6 +31,14 @@ const pages = defineCollection({
   }),
 });
 
+const skills = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/skills" }),
+  schema: z.object({
+    name: z.string(),
+    description: z.string().optional(),
+  }).catchall(z.any()),
+});
+
 const weeklypw = defineCollection({
   loader: feedLoader({
     url: "https://weekly.pw/rss/",
@@ -46,5 +54,6 @@ const weeklypw = defineCollection({
 export const collections = {
   recipes: recipes,
   pages: pages,
+  skills: skills,
   weeklypw: weeklypw,
 };

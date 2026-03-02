@@ -9,6 +9,7 @@ toc: true
 
 - YES! This project is still alive and was just updated to use the latest and greatest [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/).
 - New content is also planned!
+- Added new **Skills** section with specialized knowledge, workflow patterns, and best practices for ProcessWire development. Check out [/skills/](/skills/).
 
 ---
 
