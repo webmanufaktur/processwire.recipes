@@ -1,2 +1,6 @@
 /sitemap.xml /sitemap-index.xml 301
 /topic/ / 301
+/topic/page/ /topic/pages/ 301
+/topic/image/ /topic/images/ 301
+/topic/processwire3/ /topic/processwire/ 301
+/topic/accessibility/ /topic/accessibility-a11y/ 301
