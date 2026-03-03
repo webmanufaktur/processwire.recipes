@@ -39,6 +39,19 @@ const skills = defineCollection({
   }).catchall(z.any()),
 });
 
+const posts = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/posts" }),
+  schema: z.object({
+    title: z.string(),
+    authors: z.array(z.string()).optional(),
+    date: z.date(),
+    excerpt: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    version: z.string().optional(),
+    updated: z.date().optional(),
+  }),
+});
+
 const weeklypw = defineCollection({
   loader: feedLoader({
     url: "https://weekly.pw/rss/",
@@ -55,5 +68,6 @@ export const collections = {
   recipes: recipes,
   pages: pages,
   skills: skills,
+  posts: posts,
   weeklypw: weeklypw,
 };

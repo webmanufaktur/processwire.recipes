@@ -1,0 +1,48 @@
+---
+import Hero from "@components/Hero.astro";
+import Base from "@layouts/Base.astro";
+
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const items = await getCollection("posts");
+
+  return items.map((item) => ({
+    params: { id: item.id },
+    props: item,
+  }));
+}
+
+type Props = CollectionEntry<"posts">;
+
+const item = Astro.props;
+const { Content } = await render(item);
+const formattedDate = new Date(item.data.date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const authorMeta = item.data.authors ? item.data.authors.join(", ") : undefined;
+---
+
+<Base title={item.data.title}>
+  <article>
+    <Hero
+      headline={item.data.title}
+      text={formattedDate}
+      meta={authorMeta}
+    />
+    <div class="bg-pw-gradient px-4">
+      <div class="max-w-3xl mx-auto">
+        <div
+          class="bg-white p-6 md:p-12 border border-gray-100 md:shadow md:rounded"
+          transition:name={item.id}
+        >
+          <div class="prose max-w-none">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Base>

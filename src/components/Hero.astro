@@ -3,9 +3,10 @@ interface Props {
   heading?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   headline: string;
   text?: string;
+  meta?: string;
 }
 
-const { heading = "h1", headline, text } = Astro.props;
+const { heading = "h1", headline, text, meta } = Astro.props;
 
 const HeadingTag = heading;
 ---
@@ -19,13 +20,12 @@ const HeadingTag = heading;
     />
 
     {
-      text && (
-        <p
-          class="mt-4 text-slate-700 text-base md:text-xl text-balance"
-          transition:name="subline"
-        >
-          {text}
-        </p>
+      (text || meta) && (
+        <div class="mt-4 text-slate-700 text-base md:text-xl text-balance flex flex-wrap justify-center gap-x-3" transition:name="subline">
+          {text && <span>{text}</span>}
+          {text && meta && <span class="text-gray-400">|</span>}
+          {meta && <span class="text-gray-500">{meta}</span>}
+        </div>
       )
     }
   </div>

@@ -1,0 +1,57 @@
+---
+import Hero from "@components/Hero.astro";
+import Base from "@layouts/Base.astro";
+
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+const posts = allPosts.sort(
+  (a, b) => +new Date(b.data.date) - +new Date(a.data.date)
+);
+---
+
+<Base title="Blog" seorobots="noindex">
+  <article>
+    <Hero
+      heading="h1"
+      headline="Blog"
+      text="Latest news and updates from the ProcessWire Recipes project."
+    />
+
+    <section class="bg-pw-gradient">
+      <ul class="space-y-8 md:space-y-12 max-w-2xl w-full mx-auto px-4">
+        {
+          posts.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.id}/`}
+                class="block bg-white p-6 md:p-8 border border-gray-100 md:shadow md:rounded hover:shadow-lg transition-shadow"
+                transition:name={post.id}
+              >
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">
+                  {post.data.title}
+                </h2>
+                <time class="text-sm text-gray-500 mb-4 block">
+                  {new Date(post.data.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+                {post.data.excerpt && (
+                  <p class="text-gray-600 mb-4">{post.data.excerpt}</p>
+                )}
+                {post.data.authors && post.data.authors.length > 0 && (
+                  <div class="flex gap-2">
+                    {post.data.authors.map((author) => (
+                      <span class="text-sm text-gray-500">@{author}</span>
+                    ))}
+                  </div>
+                )}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </article>
+</Base>
