@@ -6,6 +6,8 @@ import Base from "@layouts/Base.astro";
 // logic
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const items = await getCollection("pages");
 

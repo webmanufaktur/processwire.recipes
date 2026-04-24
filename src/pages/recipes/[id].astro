@@ -9,6 +9,8 @@ import { normalizeTag } from "@utils/utils";
 // logic
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const items = await getCollection("recipes");
 

@@ -9,9 +9,9 @@ const recipes = defineCollection({
     title: z.string(),
     authors: z.array(z.string()),
     tags: z.array(z.string()),
-    date: z.date(),
-    created: z.date().optional(),
-    updated: z.date().optional(),
+    date: z.coerce.date(),
+    created: z.coerce.date().optional(),
+    updated: z.coerce.date().optional(),
     version: z.string().optional(),
     processwire: z.string().optional(),
     dependencies: z.array(z.string()).optional(),
@@ -44,11 +44,11 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     authors: z.array(z.string()).optional(),
-    date: z.date(),
+    date: z.coerce.date(),
     excerpt: z.string().optional(),
     tags: z.array(z.string()).optional(),
     version: z.string().optional(),
-    updated: z.date().optional(),
+    updated: z.coerce.date().optional(),
   }),
 });
 

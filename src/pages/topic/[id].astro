@@ -5,6 +5,8 @@ import Hero from "@components/Hero.astro";
 import { normalizeTag } from "@utils/utils";
 import RecipeCard from "@components/RecipeCard.astro";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const allRecipes = await getCollection("recipes");
 
@@ -13,16 +15,38 @@ export async function getStaticPaths() {
     ...new Set(allRecipes.flatMap((recipe) => recipe.data.tags)),
   ];
 
-  // Create a path for each tag
-  return uniqueTags.map((tag) => {
+  // Group tags by normalized ID to deduplicate (e.g. "api" and "API" both normalize to "api")
+  const groupedByNormalized = new Map<
+    string,
+    { tags: string[]; recipeIds: Set<string> }
+  >();
+  for (const tag of uniqueTags) {
+    const normalized = normalizeTag(tag);
+    if (!groupedByNormalized.has(normalized)) {
+      groupedByNormalized.set(normalized, { tags: [], recipeIds: new Set() });
+    }
+    groupedByNormalized.get(normalized)!.tags.push(tag);
+    for (const recipe of allRecipes) {
+      if (recipe.data.tags.includes(tag)) {
+        groupedByNormalized.get(normalized)!.recipeIds.add(recipe.id);
+      }
+    }
+  }
+
+  // Create a path for each normalized group
+  return [...groupedByNormalized.entries()].map(([id, { tags, recipeIds }]) => {
     const filteredRecipes = allRecipes.filter((recipe) =>
-      recipe.data.tags.includes(tag)
+      recipeIds.has(recipe.id)
     );
     return {
-      params: { id: normalizeTag(tag) },
-      props: { recipes: filteredRecipes, tag },
+      params: { id },
+      props: { recipes: filteredRecipes, tag: tags[0]! },
     };
   });
+}
+
+function escapeHtml(str: string): string {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
 const { recipes, tag } = Astro.props;
@@ -34,7 +58,7 @@ const { recipes, tag } = Astro.props;
 >
   <Hero
     heading="h1"
-    headline={`Recipes tagged with <div class="text-pwblue mt-2 uppercase">${tag}</div>`}
+    headline={`Recipes tagged with <div class="text-pwblue mt-2 uppercase">${escapeHtml(tag)}</div>`}
   />
   <section class="bg-pw-gradient">
     <ul class="space-y-8 md:space-y-12 max-w-2xl w-full mx-auto px-4">

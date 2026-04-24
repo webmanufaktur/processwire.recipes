@@ -13,12 +13,11 @@
   },
   "dependencies": {
     "@ascorbic/feed-loader": "^2.0.1",
-    "@astrojs/alpinejs": "^0.4.9",
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
-    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/alpinejs": "^0.5.0",
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/cairo": "^5.2.7",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@fontsource-variable/montserrat": "^5.2.8",
@@ -26,17 +25,15 @@
     "@fontsource-variable/outfit": "^5.2.8",
     "@fontsource-variable/rubik": "^5.2.8",
     "@fontsource-variable/work-sans": "^5.2.8",
-    "@tailwindcss/vite": "^4.2.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.4",
     "@types/alpinejs": "^3.13.11",
-    "alpinejs": "^3.15.8",
-    "astro": "^5.18.0",
+    "alpinejs": "^3.15.11",
+    "astro": "^6.1.9",
     "rehype-accessible-emojis": "^0.3.2",
     "rehype-external-links": "^3.0.0",
     "remark-breaks": "^4.0.0",
-    "tailwindcss": "^4.2.1",
-    "typescript": "^5.9.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19"
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,6 +1,10 @@
 export function normalizeTag(tag: string): string {
-  return tag
+  const result = tag
+    .trim()
     .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
+    .replace(/-+/g, "-")
+    .replace(/^-+|-$/g, "");
+  return result || "untagged";
 }

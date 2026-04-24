@@ -7,6 +7,8 @@ import Hero from "@components/Hero.astro";
 import { normalizeTag } from "@utils/utils";
 import RecipeCard from "@components/RecipeCard.astro";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const allRecipes = await getCollection("recipes");
 
@@ -27,6 +29,10 @@ export async function getStaticPaths() {
   });
 }
 
+function escapeHtml(str: string): string {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
 const { recipes, author } = Astro.props;
 ---
 
@@ -37,7 +43,7 @@ const { recipes, author } = Astro.props;
 >
   <Hero
     heading="h1"
-    headline={`Recipes by <div class="text-pwblue mt-2 uppercase">${author}</div>`}
+    headline={`Recipes by <div class="text-pwblue mt-2 uppercase">${escapeHtml(author)}</div>`}
   />
   <section class="bg-pw-gradient">
     <ul class="space-y-8 md:space-y-12 max-w-2xl w-full mx-auto px-4">

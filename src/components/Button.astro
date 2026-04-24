@@ -37,7 +37,7 @@ if (style === "full" || style === "outline") {
 }
 ---
 
-<a href={url} class={`${btnSize} ${btnStyle}`}>
+<a href={url} class:list={[btnSize, btnStyle]}>
   {label}
   {
     icon && (
