@@ -19,7 +19,7 @@ export async function GET(context) {
       pubDate: recipe.data.date,
       // Compute RSS link from post `slug`
       // This example assumes all posts are rendered as `/blog/[slug]` routes
-      link: `/recipes/${recipe.slug}/`,
+      link: `/recipes/${recipe.id}/`,
     })),
   });
 }

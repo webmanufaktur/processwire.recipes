@@ -1,9 +1,12 @@
 ---
+import type { GetStaticPaths } from "astro";
 import Hero from "@components/Hero.astro";
 import Base from "@layouts/Base.astro";
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
-export async function getStaticPaths() {
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
   const items = await getCollection("skills");
 
   return items.map((item) => {
@@ -15,7 +18,7 @@ export async function getStaticPaths() {
       props: item,
     };
   });
-}
+}) satisfies GetStaticPaths;
 
 type Props = CollectionEntry<"skills">;
 

@@ -62,7 +62,7 @@ const { slug, title, date, authors, tags } = Astro.props;
 ### Tailwind CSS v4
 
 - Tailwind v4 uses CSS-first configuration with `@theme` directive
-- Custom utilities defined in `tailwind.config.mjs`
+- Custom utilities defined via `@layer utilities` in global CSS
 - Custom colors: `pwblue` (#2480E6), `pwpink` (#e83561)
 - Use `md:` and other responsive prefixes consistently
 - Prefer Tailwind classes over custom CSS

@@ -21,14 +21,3 @@
   );
 }
 
-/* Custom Utility Classes */
-@layer utilities {
-  .bg-pw-gradient {
-    background-image: linear-gradient(
-      to bottom,
-      white 4rem,
-      #2480e6 4rem calc(100% - 4rem),
-      white calc(100% - 4rem)
-    );
-  }
-}
