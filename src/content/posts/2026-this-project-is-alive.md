@@ -1,5 +1,6 @@
 ---
 title: "2026: This Project Is Alive! More Than Ever."
+category: "Site Update"
 date: 2026-03-03
 excerpt: "Major updates to processwire.recipes: Astro 5.18, Tailwind CSS v4, and a brand new AI Skills section."
 authors:
