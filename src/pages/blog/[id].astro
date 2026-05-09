@@ -33,6 +33,7 @@ const authorMeta = item.data.authors ? item.data.authors.join(", ") : undefined;
       headline={item.data.title}
       text={formattedDate}
       meta={authorMeta}
+      category={item.data.category}
     />
     <div class="bg-pw-gradient px-4">
       <div class="max-w-3xl mx-auto">
@@ -40,7 +41,7 @@ const authorMeta = item.data.authors ? item.data.authors.join(", ") : undefined;
           class="bg-white p-6 md:p-12 border border-gray-100 md:shadow md:rounded"
           transition:name={item.id}
         >
-          <div class="prose max-w-none">
+          <div class="prose max-w-none prose-a:text-pwpink prose-a:font-semibold">
             <Content />
           </div>
         </div>

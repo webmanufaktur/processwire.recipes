@@ -45,6 +45,7 @@ const posts = defineCollection({
     title: z.string(),
     authors: z.array(z.string()).optional(),
     date: z.coerce.date(),
+    category: z.string().optional(),
     excerpt: z.string().optional(),
     tags: z.array(z.string()).optional(),
     version: z.string().optional(),

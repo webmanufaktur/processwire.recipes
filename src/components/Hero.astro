@@ -4,15 +4,21 @@ interface Props {
   headline: string;
   text?: string;
   meta?: string;
+  category?: string;
 }
 
-const { heading = "h1", headline, text, meta } = Astro.props;
+const { heading = "h1", headline, text, meta, category } = Astro.props;
 
 const HeadingTag = heading;
 ---
 
 <div class="py-6 pb-12 md:py-12 px-6">
   <div class="max-w-4xl mx-auto md:text-center">
+    {category && (
+      <span class="inline-block bg-pwpink text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 md:mb-6">
+        {category}
+      </span>
+    )}
     <HeadingTag
       class="text-gray-900 text-2xl md:text-5xl font-bold text-balance"
       set:html={headline}

@@ -1,5 +1,6 @@
 ---
 title: "Astro 6 Upgrade: Faster, Safer, and More Efficient"
+category: "Site Update"
 date: 2026-04-25
 excerpt: "processwire.recipes is now running on Astro 6 with font optimization, smarter prefetching, XSS protection, and a cleaner build pipeline. Here's what changed and why it matters for ProcessWire developers."
 authors:
