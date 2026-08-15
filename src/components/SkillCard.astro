@@ -10,7 +10,6 @@ const { slug, name, description } = Astro.props;
 
 <div
   class="border border-gray-100 bg-white p-6 md:p-8 rounded shadow"
-  transition:name={slug}
 >
   <a href={`/skills/${slug.replace(/\/skill$/, "")}/`} class="text-lg block">
     <span class="font-semibold">{name}</span>

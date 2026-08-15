@@ -13,7 +13,6 @@ The project revives a long-standing ProcessWire foundation that has helped devel
 - **Blog / posts** — project updates and ProcessWire ecosystem news
 - RSS ([recipes.xml](https://processwire.recipes/recipes.xml)) and sitemap feeds
 - Client-side search with Alpine.js
-- View Transitions throughout
 
 ## Tech Stack
 
