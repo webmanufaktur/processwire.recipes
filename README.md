@@ -20,6 +20,7 @@ The project revives a long-standing ProcessWire foundation that has helped devel
 - [Tailwind CSS v4](https://tailwindcss.com) — custom theme with `pwblue` / `pwpink`
 - [Alpine.js](https://alpinejs.dev) — interactivity & live search
 - [Zod](https://zod.dev) — content schema validation
+- [@playform/compress](https://github.com/Playform/Compress) (`astro-compress`) — build-time asset compression (HTML, images, JS, SVG)
 - TypeScript (strict)
 
 ## Commands

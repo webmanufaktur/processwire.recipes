@@ -6,6 +6,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import mdx from "@astrojs/mdx";
 import { unified } from "@astrojs/markdown-remark";
+import Compress from "astro-compress";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -21,7 +22,12 @@ export default defineConfig({
   ],
   site: "https://processwire.recipes",
 
-  integrations: [alpinejs(), sitemap(), mdx()],
+  // astro-compress uses Lightning CSS for CSS minification by default, which is
+  // safe for Tailwind v4's responsive media range syntax (@media (width>=...)).
+  // With its default legacy-browser targets the minified CSS is not smaller than
+  // the already-minified Astro/Tailwind output, so the CSS is left untouched here.
+  // All other assets (HTML, images, JS, SVG) are compressed.
+  integrations: [alpinejs(), sitemap(), mdx(), Compress()],
 
   markdown: {
     // Astro v7: remark/rehype plugins must run through the unified() pipeline.
